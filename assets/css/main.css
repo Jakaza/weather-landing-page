@@ -1,0 +1,198 @@
+
+
+.wrapper-current{
+  position: relative;
+  padding: 0 15px;
+}
+
+
+#form-search{
+  height: fit-content;
+  width: 100%;
+}
+.searchbar,
+.button {
+  height: 45px;
+  margin: 1em 0 4em;
+  padding: 0;
+  font: 400 1rem 'Roboto';
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: rgb(105, 105, 105);
+  border: none;
+}
+
+.searchbar {
+  float: left;
+  width: 380px;
+  padding: 0 8px;
+  border-bottom: solid thin white;
+  color: #494949;
+}
+
+.button {
+  float: right;
+  width: 100px;
+  margin-right: 50px;
+}
+
+.wrapper-current {
+  color: #fff;
+  overflow: auto;
+  width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+nav {
+  font-size: 1rem;
+  margin: 0 auto;
+  /* padding: 5% 0 10%; */
+}
+#locateBtn, #unitBtn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: #fff;
+  height: 40px;
+  transition: background 1s ease-in-out, border 0.2s ease-in-out;
+  width: 40px;
+}
+#locateBtn.on, #unitBtn.on {
+  background: rgba(255,255,255,0.25);
+}
+#locateBtn:focus, #locateBtn:hover, #unitBtn:focus, #unitBtn:hover {
+  border: 1px solid rgba(255,255,255,0.75);
+}
+#locateBtn {
+  margin-right: 10px;
+}
+#unitBtn {
+  font-weight: 300;
+  padding-right: 3px;
+  padding-top: 2px;
+  text-transform: uppercase;
+}
+#unitBtn:before {
+  content: '\00b0'; /* Degree symbol */
+  padding: 1px;
+}
+/* locateBtn Pulse Animation */
+#locateBtn.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  20% { background: rgba(255,255,255,0.25); }
+}
+#current {
+  /* padding: 10% 5% 20%; */
+  position: relative;
+}
+.location {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+.date {
+  font-size: 1em;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+}
+
+#current .weatherIcon {
+  /* height: 100px; */
+  margin: 0 auto 7%;
+  width: 100px;
+}
+.temp {
+  font-size: 3em;
+  /* line-height: 1.3; */
+}
+
+.temp:after {
+  content: '\00b0';
+  margin-right: -0.3em;
+}
+#current .conditions {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+
+.loader-container{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  z-index: 0;
+  border-radius: 8px;
+}
+
+
+/*Data Loader*/
+#loading-data{
+    background-color: #fc6a42;
+    /* background-color: #0077b6; */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    margin-top: 0px;
+    top: 0px;
+    left:0;
+    z-index: 9999;
+}
+
+
+
+
+@media (max-width: 550px){
+  #form-search-con{
+    position: relative;
+    padding: 0;
+  }
+.searchbar {
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 0;
+}
+.button {
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  /* margin-right: 50px; */
+}
+.wrapper-current{
+  width: 100%;
+  padding: 5px 15px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+}
+
+
+.attr_sun{ 
+    top: 45%;
+    width: 50px;
+    height: 50px;
+}
+}
+
+
+  /* Future Forecast */
+
+  #future .tempRange{
+    font-size: 24px;
+  }
+  #future p { text-align: left; }
+.high:after, .low:after {
+  content: '\00b0';
+  padding: 1px;
+}
