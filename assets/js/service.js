@@ -9,7 +9,7 @@ getLocationBtn.addEventListener('click' , ()=>{
 })
 
 function success(cords){
-    fetchWeatherData(API_KEY ,cords.coords)
+    fetchWeatherData(cords.coords)
     // console.log();
 }
 
@@ -20,7 +20,7 @@ function error(err){
 }
 
 
-function fetchWeatherData(api , cords = [] ) {
+function fetchWeatherData(cords = [] ) {
     if(cords instanceof Object){
         let {latitude,longitude} = cords
 
