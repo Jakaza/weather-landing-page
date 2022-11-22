@@ -22,10 +22,32 @@ function error(err){
 
 function fetchWeatherData(api , cords = [] ) {
     if(cords instanceof Object){
-        console.log('TRUE', cords);
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${api}`
+        let {latitude,longitude} = cords
+
+        let url = `https://api.openweathermap.or/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api}`
+        
+        const httpRequest = new XMLHttpRequest()
+
+        httpRequest.onprogress = () =>{
+            console.log('loading......');
+        }
+
+        httpRequest.onerror = (err)=>{
+            console.log("Error " , err);
+            return false
+        }
+
+        httpRequest.onreadystatechange = ()=>{
+            if(httpRequest.readyState === 4 && httpRequest.status === 200){
+                const data = JSON.parse(httpRequest.responseText)
+                console.log(data);
+            }
+            return false;
+        }
+        httpRequest.open('GET', url)
+        
+        httpRequest.send()
     }
-    return
 }
 
 
